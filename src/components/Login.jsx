@@ -5,13 +5,10 @@ import { responseStore } from './ResponseSlice';
 import { useSelector } from 'react-redux';
 
 function Login(props) {
-  const rData = useSelector(state=>state.responseData.responseData)
+  
   const Dispatch = useDispatch()
 
-    const handleClick = () => {
-        const data = "some data"
-        props.onData(data);
-      };
+    
 
   const [response, setResponse] = useState([])
   const [username, setUsername] = useState("");
@@ -28,7 +25,6 @@ else{
  socket.close(1000, "Closing from client");
  console.log('Connection close'); 
 }
-
 
 function submit(){
   Dispatch(responseStore(response))
@@ -67,7 +63,7 @@ function submit(){
   
   }
   {/* <p>{rData}</p> */}
-  <button onClick={handleClick}>Click me</button>
+ 
 </div>
 </div>
   );
